@@ -1,0 +1,144 @@
+@keyframes loco{
+    0%{background: blue; transform:rotate(10deg) scale(1,1);}
+    20%{background: rgb(75, 230, 111); transform:rotate(-10deg) scale(1.5,1.5);}
+    40%{background: green; transform:rotate(10deg) scale(1,1);}
+    60%{background: yellow; transform:rotate(-10deg) scale(1.5,1.5);}
+    80%{background: gray; transform:rotate(20deg) scale(1,1);}
+    90%{background: rgb(190, 86, 157); transform:rotate(-10deg) scale(2,2);}
+    100%{background: rgb(226, 29, 151); transform:rotate(10deg) scale(1,1);}
+    
+}
+
+.contenedor{
+    align-items: center;
+    border:  solid 0.1em;
+    display: flex;
+    height: 500px;
+    justify-content: space-around;
+}
+
+.contenedor div{
+    border: solid 0.1em;
+    filter: invert(1);
+    height: 400px;
+    width: 20%;
+    transition: all linear 0.5s;
+}
+
+.contenedor div:hover{
+    background-size: 100% 100%;
+    filter: invert(0);
+
+}
+
+.cupon{
+    display: none;
+    font-size: 48px;
+    font-style: italic;
+    font-weight:bolder;
+    text-align: center;
+}
+
+.hija1{
+    background:url("Imagenes/featuredImage.jpg");
+    background-size: cover;
+}
+
+
+.hija2{
+    background:url("Imagenes/gnos.jpg");
+    background-size: cover;
+}
+.hija3{
+    background:url("Imagenes/Qin.jpg");
+    background-size: cover;
+}
+.hija4{
+    background:url("Imagenes/Zoro.jpg");
+    background-size: cover;
+}
+
+.imprimir{
+    background: rgb(255, 255, 255) url("Imagenes/Impresora.png") no-repeat 35px 0;
+    background-size: 40px 40px;
+    border-radius: 1em;
+    box-shadow:0.1em 0.2em 0.3em rgb(0, 0, 0, 0.5) ;
+    display: block;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 1em auto;
+    /* color: brown; */
+    padding: 0.4em;
+    width: 50%;
+
+}
+
+.imprimir:hover{
+    cursor: pointer;
+}
+
+@media print{
+    .hija2,.hija4{
+        display: none;
+    }
+
+    .contenedor{
+        background-color: bisque;
+        flex-direction: column;
+    }
+    .contenedor div{
+        filter: none;
+        width: 50%;
+    } 
+
+    .cupon{
+        display: block;
+    }
+
+    .imprimir{
+        display: none;
+    }
+
+}
+
+@media screen and (orientation:landscape){
+    body{
+        background: darkblue;
+    }
+    
+}
+@media screen and (orientation:portrait){
+    body{
+        background: rgb(170, 170, 235);
+    }
+    
+}
+
+@media screen and (max-width:700px){
+    .contenedor{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contenedor div{
+        filter: invert(0);
+        height: 400px;
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .contenedor .hija1{
+        filter: none;
+        height: 400px;
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .hija1{
+        animation:loco alternate infinite 5s ;
+    }
+}
+
+
+
+
